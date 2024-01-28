@@ -1,0 +1,1093 @@
+body {
+  background-image: url(img/bg2.png);
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100%;
+  text-align: center;
+  background-size: cover;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: britany;
+  src: url(fonts/BrittanySignature.ttf);
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+.pagininhas {
+  color: #944E4C;
+  font-family: 'IM Fell English', serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%;
+  /* 19.65px */
+  margin: 5px;
+}
+
+#pages-content a {
+
+  text-decoration: none;
+  /* Remove underline */
+  cursor: pointer;
+  /* Add pointer cursor */
+}
+
+#pagesArrow {
+  transition: transform 0.5s ease;
+}
+
+
+.teste {
+  max-width: 100%;
+  /* Set the maximum width to 100% of the parent container */
+  height: auto;
+  /* Allow the height to adjust proportionally */
+}
+
+#nomes {
+  color: #612330;
+  text-align: center;
+  font-family: britany;
+  font-size: 50px;
+  margin-top: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 79.605%;
+  /* 39.803px */
+}
+
+
+.papel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center items horizontally */
+  background-image: url("./img/papel.png");
+  width: auto;
+  height: 45%;
+  background-size: cover;
+  padding-top: 70px;
+  text-align: center;
+
+}
+
+.flip-180 {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
+}
+
+.fixed-pages-box {
+  position: fixed;
+}
+
+
+#texto-papel {
+  color: #612330;
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  /* 10.56px */
+  padding: 0 3%;
+}
+
+.cronometro {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #944E4C;
+  border-radius: 25px;
+  padding: 15px;
+  width: 60%;
+  height: 40%;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #612330;
+  border-radius: 10px;
+  width: 148px;
+  height: 80px;
+  color: #FFF;
+  margin: 0 2px;
+}
+
+.num {
+  color: #FFF;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 102%;
+  /* 10.032px */
+  margin-bottom: 30%;
+}
+
+.countdown-label {
+  color: #FFF;
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 102%;
+  /* 5.71px */
+}
+
+.texto-final {
+  width: 85%;
+  margin-left: 8%;
+  text-align: left;
+  margin-top: 0px;
+}
+
+#bem-vindos {
+  color: #612330;
+  font-family: britany;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+#criamos {
+  color: #944E4C;
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%;
+  /* 13.1px */
+  margin-bottom: 100px;
+}
+
+
+.content-container {
+  height: 100%;
+  /* Set a specific height for your content container */
+  overflow-y: auto;
+  /* Enable vertical scrolling when content overflows */
+  scroll-behavior: smooth;
+}
+
+
+#scrolling-svg {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  z-index: 1000;
+  cursor: pointer;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+#popup-box {
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  /* Added visibility transition */
+  opacity: 0;
+  visibility: hidden;
+  text-align: left;
+}
+
+
+.a {
+  color: #612330;
+  font-family: 'IM Fell English', serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%;
+  /* 30.392px */
+  text-decoration: none;
+}
+
+.a:hover {
+  color: #612330;
+  /* Use the default text color on hover */
+  text-decoration: none;
+  /* Remove underline on hover */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #612330;
+  border-radius: 100px;
+  border: 0px solid #ffffff;
+}
+
+
+#menuHeader {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+
+
+.menu-fixo {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  transition: all .5s;
+  background-color: #944e4c;
+  width: 100%;
+  height: 75px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.menu-fixo2 {
+  color: #ffffff;
+
+}
+
+.abaco {
+  color: #612330;
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 102%;
+  /* 36.72px */
+  transition: color 0.5s ease;
+  /* Add a smooth color transition effect */
+}
+
+.abaco:hover {
+  color: #612330;
+  /* Change the color on hover */
+  text-decoration: none;
+}
+
+.abaco::after {
+  background-color: #612330;
+  transition: width 0.5s ease;
+}
+
+.abaco:hover::after {
+  width: 100%;
+}
+
+#menuHeader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navegacao {
+  opacity: 0;
+  visibility: hidden;
+  margin: 5 30px;
+
+}
+
+.abaco::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  /* Set the line thickness */
+  background-color: #612330;
+  /* Set the line color */
+  transition: width 0.5s ease;
+  /* Add a smooth transition effect */
+}
+
+/* Hover effect to make the line appear */
+.abaco:hover::after {
+  width: 100%;
+}
+
+
+.pages-box {
+  display: none;
+  /* Adjust the top position according to your design */
+  background-color: #fff;
+  padding: 10px;
+  margin-top: -5px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+
+#pagesBox {
+  position: fixed;
+  top: 0;
+  flex-direction: column;
+}
+
+#page-link {
+  color: #944E4C;
+  font-family: 'IM Fell English', serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%;
+  /* 19.65px */
+  margin-left: 0px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7px;
+}
+
+#page-link:hover {
+  /* Set hover styles to be the same as normal styles */
+  background-color: transparent;
+  /* Or whatever background color you want */
+  color: #612330;
+  /* Set the desired text color */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+#menuzinho {
+  margin-top: -10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: left;
+  margin-left: -60px;
+}
+
+@media (min-width: 220px) {
+  #nomes {
+    font-size: 50px;
+    line-height: 150%;
+  }
+
+  .papel {
+    background-image: url("./img/papel.png");
+    width: auto;
+    height: 350px;
+    margin-top: -300px;
+  }
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 148px;
+    height: 75px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: -15px;
+    width: 190px;
+    height: 95px;
+  }
+
+  #texto-papel {
+    font-size: 14px;
+    padding: 5 3%;
+  }
+
+  #bem-vindos {
+    font-size: 25px;
+  }
+
+  #criamos {
+    font-size: 15px;
+  }
+
+}
+
+
+
+
+@media (min-width: 280px) {
+
+  #scrolling-svg {
+    top: 130px;
+  }
+
+  #popup-box {
+    top: 130px;
+    width: 60%;
+  }
+
+  #nomes {
+    line-height: 100%;
+  }
+
+  .papel {
+    background-image: url("./img/papel.png");
+    width: auto;
+    height: 350px;
+    margin-top: -230px;
+  }
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 148px;
+    height: 75px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: -15px;
+    width: 190px;
+    height: 95px;
+  }
+
+  #texto-papel {
+    font-size: 16px;
+    padding: 5 3%;
+  }
+
+}
+
+
+@media (min-width: 320px) {
+  #scrolling-svg {
+    top: 0px;
+  }
+
+  #popup-box {
+    top: 0px;
+    width: 60%;
+  }
+
+  .papel {
+    background-image: url("./img/papel.png");
+    width: auto;
+    height: 370px;
+    margin-top: -210px;
+  }
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 148px;
+    height: 70px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+  .cronometro {
+    border-radius: 22px;
+    padding: 10px;
+    width: 200px;
+    height: 90px;
+  }
+
+  #texto-papel {
+    font-size: 17px;
+    padding: 15px 3%;
+  }
+
+}
+
+
+@media (min-width: 360px) {
+
+  .papel {
+    background-image: url("./img/papel.png");
+    width: auto;
+    height: 375px;
+    margin-top: -210px;
+  }
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 50px;
+    height: 80px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 220px;
+    height: 100px;
+  }
+
+  #texto-papel {
+    font-size: 18px;
+    padding: 8 3%;
+  }
+
+  .num {
+    font-size: 16px;
+    margin-bottom: 30%;
+  }
+
+
+
+}
+
+@media (min-width: 375px) {
+  .papel {
+    background-image: url("./img/papel.png");
+    width: auto;
+    height: 400px;
+    margin-top: -210px;
+
+  }
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 45px;
+    height: 80px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 230px;
+    height: 100px;
+  }
+
+  #texto-papel {
+    font-size: 20px;
+    padding: 8 3%;
+  }
+
+  .texto-final {
+    font-size: 18px;
+  }
+
+  .num {
+    font-size: 13px;
+    margin-bottom: 30%;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+  }
+
+
+}
+
+
+@media (min-width: 410px) {
+
+  .papel {
+    background-image: url("./img/papel.png");
+    margin-top: -150px;
+
+  }
+
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 50px;
+    height: 80px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+  }
+
+  #texto-papel {
+    font-size: 19px;
+    padding: 8 3%;
+  }
+
+  .num {
+    font-size: 13px;
+    margin-bottom: 30%;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+  }
+
+
+  #criamos {
+    font-size: 18px;
+  }
+
+  #bem-vindos {
+    font-size: 40px;
+  }
+
+
+}
+
+
+
+
+@media (min-width: 430px) {
+  .papel {
+    background-image: url("./img/papel.png");
+    margin-top: -170px;
+
+  }
+
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 50px;
+    height: 80px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 260px;
+    height: 100px;
+  }
+
+  #texto-papel {
+    font-size: 19px;
+    padding: 8 3%;
+  }
+
+  .num {
+    font-size: 15px;
+    margin-bottom: 30%;
+  }
+
+  .countdown-label {
+    font-size: 10px;
+  }
+
+  #bem-vindos {
+    font-size: 45px;
+  }
+
+  #criamos {
+    font-size: 25px;
+  }
+
+
+
+}
+
+
+
+
+
+@media (min-width: 1024px) {
+
+
+
+  .papel {
+    background-image: url("./img/papel.png");
+    width: auto;
+    height: 500px;
+    margin-top: 0px;
+  }
+
+  .principal {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+  }
+
+
+  #nomes {
+    font-size: 80px;
+    width: 40%;
+    white-space: nowrap;
+    /* Prevent line breaks by default */
+  }
+
+  #nomes span {
+    display: block;
+    /* Each part of the text on a new line */
+    margin-top: 5px;
+    /* Adjust the margin based on your design */
+  }
+
+  #igreja {
+    width: 70%
+  }
+
+
+
+
+  .btn {
+    font-size: 25px;
+    margin: 5 15px;
+  }
+
+
+  #texto-papel {
+    padding-top: 20px;
+    width: 80%;
+    font-size: 25px;
+  }
+
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 430px;
+    height: 140px;
+  }
+
+
+  .countdown-item {
+    border-radius: 10px;
+    width: 80px;
+    height: 115px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+
+  .num {
+    font-size: 20px;
+    margin-bottom: 30%;
+  }
+
+  .countdown-label {
+    font-size: 15px;
+  }
+
+
+
+  #scrolling-svg {
+
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navegacao {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #menuHeader {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .abaco {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+
+}
+
+@media (min-width: 1280px) {
+  .papel {
+    background-image: url("./img/papel.png");
+    width: auto;
+    height: 500px;
+
+  }
+
+  #nomes {
+    font-size: 95px;
+  }
+
+  .abaco {
+    font-size: 30px;
+
+  }
+
+
+  .papel {
+
+    height: 80%;
+
+  }
+
+
+
+  #texto-papel {
+    padding-top: 25px;
+    width: 80%;
+    font-size: 29px;
+  }
+
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 450px;
+    height: 160px;
+    margin-top: 15px;
+  }
+
+
+  .countdown-item {
+    border-radius: 15px;
+    width: 85px;
+    height: 130px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+
+  .num {
+    font-size: 25px;
+
+  }
+
+  .countdown-label {
+    font-size: 18px;
+  }
+
+  #bem-vindos {
+    font-size: 60px;
+  }
+
+  #criamos {
+    font-size: 27px;
+  }
+
+
+
+
+
+}
+
+
+@media (min-width: 1366px) {
+  #nomes {
+    font-size: 100px;
+  }
+
+  .abaco {
+    font-size: 35px;
+    margin: 5 18px;
+
+  }
+
+  .papel {
+    background-image: url("./img/papel.png");
+    height: 80%;
+
+  }
+
+
+
+  #texto-papel {
+    padding-top: 30px;
+    width: 80%;
+    font-size: 30px;
+  }
+
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 490px;
+    height: 160px;
+    margin-top: 15px;
+  }
+
+
+  .countdown-item {
+    border-radius: 15px;
+    width: 85px;
+    height: 130px;
+    color: #FFF;
+    margin: 0 2px;
+  }
+
+
+  .num {
+    font-size: 25px;
+
+  }
+
+  .countdown-label {
+    font-size: 18px;
+  }
+
+  #bem-vindos {
+    font-size: 60px;
+  }
+
+  #criamos {
+    font-size: 27px;
+  }
+
+
+
+
+
+
+}
+
+
+@media (min-width: 1600px) {
+  #nomes {
+    font-size: 120px;
+  }
+
+  .abaco {
+    font-size: 35px;
+    margin: 5 30px;
+
+  }
+
+
+  .papel {
+    background-image: url("./img/papel.png");
+    height: 80%;
+
+  }
+
+
+
+  #texto-papel {
+    padding-top: 60px;
+    width: 80%;
+    font-size: 35px;
+  }
+
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 600px;
+    height: 200px;
+    margin-top: 15px;
+  }
+
+
+  .countdown-item {
+    border-radius: 15px;
+    width: 100px;
+    height: 170px;
+    color: #FFF;
+    margin: 0 0px;
+  }
+
+
+  .num {
+    font-size: 35px;
+
+  }
+
+  .countdown-label {
+    font-size: 20px;
+  }
+
+  #bem-vindos {
+    font-size: 63px;
+  }
+
+  #criamos {
+    font-size: 27px;
+  }
+
+
+}
+
+
+@media (min-width: 1920px) {
+  #nomes {
+    font-size: 120px;
+  }
+
+  .abaco {
+    font-size: 35px;
+    margin: 5 30px;
+
+  }
+
+
+  .papel {
+    background-image: url("./img/papel.png");
+    height: 90%;
+
+  }
+
+
+
+  #texto-papel {
+    padding-top: 120px;
+    width: 80%;
+    font-size: 38px;
+  }
+
+
+  .cronometro {
+    border-radius: 25px;
+    padding: 10px;
+    width: 600px;
+    height: 200px;
+    margin-top: 50px;
+  }
+
+
+  .countdown-item {
+    border-radius: 15px;
+    width: 100px;
+    height: 170px;
+    color: #FFF;
+    margin: 0 0px;
+  }
+
+
+  .num {
+    font-size: 35px;
+
+  }
+
+  .countdown-label {
+    font-size: 20px;
+  }
+
+  #bem-vindos {
+    font-size: 63px;
+  }
+
+  #criamos {
+    font-size: 27px;
+    padding-bottom: 50px;
+  }
+
+
+}

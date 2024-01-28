@@ -1,0 +1,336 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensagem</title>
+  <link href="mensagem.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Imbue:opsz,wght@10..100,100&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../../img/icone.png">
+</head>
+
+<body>
+  <svg id="scrolling-svg" xmlns="http://www.w3.org/2000/svg" width="46" height="43" viewBox="0 0 46 43" fill="none">
+    <path d="M0 0H36C41.5228 0 46 4.47715 46 10V33C46 38.5228 41.5228 43 36 43H0V0Z" fill="white" />
+    <path d="M9 16H36.0185" stroke="#612330" stroke-linecap="round" />
+    <path d="M9 22H36.0185" stroke="#612330" stroke-linecap="round" />
+    <path d="M9 28H36.0185" stroke="#612330" stroke-linecap="round" />
+  </svg>
+  <div id="popup-box">
+    <p><a class="a" href="../../index.html">Inicio</a></p>
+    <p><a class="a" href="../local/local.html">Locais</a></p>
+    <p><a class="a" href="../presentes/presentes.html">Lista de presentes</a></p>
+    <p><a class="a" href="../presenca/presenca.html">Confirme sua presença</a></p>
+    <p><a class="a" href="#" onclick="togglePagesContent()">Páginas</a></p>
+    <div id="pages-content" style="display: none;">
+      <a class="pagininhas" href="../sobre/sobre.html"> Nossa timeline</a><br>
+      <a class="pagininhas" href="../padrinhos/padrinhos.html"> Padrinhos</a><br>
+      <a class="pagininhas" href="mensagem.html"> Deixe uma mensagem</a><br>
+    </div>
+    <svg id="close-menu" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#612330"
+      class="bi bi-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+    </svg>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollingSvg = document.getElementById('scrolling-svg');
+      scrollingSvg.addEventListener('click', toggleContent);
+
+      // Event listener for the close-menu SVG
+      document.getElementById('close-menu').addEventListener('click', function () {
+        togglePopupBox(); // Toggle the visibility of the popup-box when the close-menu SVG is clicked
+      });
+    });
+
+    function toggleContent() {
+      const scrollingSvg = document.getElementById('scrolling-svg');
+      const popupBox = document.getElementById('popup-box');
+
+      const svgRect = scrollingSvg.getBoundingClientRect();
+
+      popupBox.style.top = svgRect.top + 'px';
+      popupBox.style.left = svgRect.left + 'px';
+
+      scrollingSvg.style.opacity = '0';
+      scrollingSvg.style.visibility = 'hidden';
+      popupBox.style.opacity = '1';
+      popupBox.style.visibility = 'visible';
+    }
+
+    function togglePopupBox() {
+      const scrollingSvg = document.getElementById('scrolling-svg');
+      const popupBox = document.getElementById('popup-box');
+
+      scrollingSvg.style.opacity = '1';
+      scrollingSvg.style.visibility = 'visible';
+      popupBox.style.opacity = '0';
+      popupBox.style.visibility = 'hidden';
+    }
+  </script>
+
+
+  <header class="d-flex justify-content-center b">
+    <div class="d-flex align-items-center py-2 vw-100">
+      <nav class="nav nav-masthead justify-content-center vw-100 bar">
+        <a class="nav-link fw-bold py-1 px-2 navegacao" href="../../index.html">Inicio</a>
+        <a class="nav-link fw-bold py-1 px-2 navegacao" href="../local/local.html">Locais</a>
+        <a class="nav-link fw-bold py-1 px-2 navegacao" href="../presentes/presentes.html">Lista de
+          presentes</a>
+        <a class="nav-link fw-bold py-1 px-2 navegacao" href="../presenca/presenca.html">Confirme sua
+          presença</a>
+        <a class="nav-link fw-bold py-1 px-2 navegacao" href="#" onclick="openPagesBox()" id="atual">Páginas <svg
+            id="pagesArrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg></a>
+        <div id="pagesBox" class="pages-box">
+          <a href="../sobre/sobre.html" class="page-link">Nossa timeline</a>
+          <a href="../padrinhos/padrinhos.html" class="page-link">Padrinhos</a>
+          <a href="../mensagem/mensagem.html" class="page-link">Deixe uma mensagem</a>
+        </div>
+    </div>
+  </header>
+
+  <div class="principal">
+    <p class="deixe">Deixe sua mensagem</p>
+    <p class="nosdois">Nós dois amamos expressar nossos sentimentos por meio das palavras! Por isso, seria uma
+      verdadeira honra receber uma mensagem de cada um dos nossos convidados.</p>
+  </div>
+  <div class="linha"></div>
+  <div class="inputs">
+    <div class="primeira">
+      <p class="tag">Nome</p>
+      <input type="text" id="nome" placeholder="Escreva seu nome">
+    </div>
+    <div class="segunda">
+      <p class="tag">Mensagem</p>
+      <textarea id="mensagem" placeholder="Escreva sua mensagem"></textarea>
+    </div>
+  </div>
+
+  <button id="send">Enviar mensagem</button>
+
+  <div class="mensagem-container" id="mensagemContainer">
+    <!-- This is where the messages will be displayed -->
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+    import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyByhuINuW4rDm_CY5vpQ-2ckAyO19W4PJ8",
+      authDomain: "teste-novo-projeto-e465f.firebaseapp.com",
+      projectId: "teste-novo-projeto-e465f",
+      storageBucket: "teste-novo-projeto-e465f.appspot.com",
+      messagingSenderId: "289003529337",
+      appId: "1:289003529337:web:76c323a1b7dbf69b6360a8"
+    };
+
+    // Make firebaseConfig accessible in the console by attaching it to the window object
+    window.firebaseConfig = firebaseConfig;
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const userRef = ref(db, 'user');
+
+    // Function to toggle "Ler mais" for messages
+    function toggleReadMore(link) {
+      const messageContent = link.previousElementSibling;
+      const fullMessage = messageContent.getAttribute('data-full-message');
+
+      if (messageContent.innerHTML.includes('...')) {
+        messageContent.innerHTML = fullMessage;
+        link.innerText = 'Ler menos';
+      } else {
+        messageContent.innerHTML = fullMessage.slice(0, 100) + '...';
+        link.innerText = 'Ler mais';
+      }
+    }
+
+    document.getElementById("send").addEventListener('click', function (e) {
+      e.preventDefault();
+      set(ref(db, 'user/' + document.getElementById('nome').value), {
+        nome: document.getElementById("nome").value,
+        mens: document.getElementById("mensagem").value
+      });
+
+      document.getElementById("nome").value = "";
+      document.getElementById("mensagem").value = "";
+      alert("Mensagem enviada!");
+    });
+
+    onValue(userRef, (snapshot) => {
+      // Get the container element where messages will be displayed
+      const mensagemContainer = document.getElementById("mensagemContainer");
+
+      // Clear previous messages
+      mensagemContainer.innerHTML = "";
+
+      // Iterate through each child in the snapshot and display the messages
+      snapshot.forEach((childSnapshot) => {
+        const messageData = childSnapshot.val();
+        const messageElement = document.createElement("div");
+
+        const truncatedMessage = messageData.mens.length > 100
+          ? messageData.mens.slice(0, 100) + '...'
+          : messageData.mens;
+
+        // Customize the message display as needed
+        messageElement.innerHTML = `
+              <div class="mensagem mensagem-item">
+                <p class="mensagem-nome"><strong>${messageData.nome}</strong></p>
+                <p class="mensagem-corpo" id="messageContent" data-full-message="${messageData.mens}">${truncatedMessage}</p>
+                ${messageData.mens.length > 100 ? '<a href="#" class="read-more-link">Ler mais</a>' : ''}
+              </div>
+            `;
+
+        // Append the message to the container
+        mensagemContainer.appendChild(messageElement);
+      });
+    }, (error) => {
+      console.error("Error in onValue listener:", error);
+    });
+
+    // Event listener for "Ler mais" links
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('read-more-link')) {
+        e.preventDefault();
+        toggleReadMore(e.target);
+      }
+    });
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollingSvg = document.getElementById('scrolling-svg');
+      scrollingSvg.addEventListener('click', openBox);
+
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollingSvg = document.getElementById('scrolling-svg');
+      scrollingSvg.addEventListener('click', toggleContent);
+
+    });
+
+    function closeMenuOnClickOutside(event) {
+      const popupBox = document.getElementById('popup-box');
+
+      // Check if the clicked element is outside the popup-box
+      if (!popupBox.contains(event.target) && event.target.id !== 'scrolling-svg') {
+        closePopupBox();
+      }
+    }
+
+    function closePopupBox() {
+      const scrollingSvg = document.getElementById('scrolling-svg');
+      const popupBox = document.getElementById('popup-box');
+
+      scrollingSvg.style.opacity = '1';
+      scrollingSvg.style.visibility = 'visible';
+      popupBox.style.opacity = '0';
+      popupBox.style.visibility = 'hidden';
+    }
+
+
+    function toggleContent() {
+      const scrollingSvg = document.getElementById('scrolling-svg');
+      const popupBox = document.getElementById('popup-box');
+
+      const svgRect = scrollingSvg.getBoundingClientRect();
+
+      popupBox.style.top = svgRect.top + 'px';
+      popupBox.style.left = svgRect.left + 'px';
+
+      scrollingSvg.style.opacity = '0';
+      scrollingSvg.style.visibility = 'hidden';
+      popupBox.style.opacity = '1';
+      popupBox.style.visibility = 'visible';
+    }
+  </script>
+  <script>
+    function togglePagesContent() {
+      const pagesContent = document.getElementById('pages-content');
+
+      // Toggle the visibility of pages-content
+      pagesContent.style.display = (pagesContent.style.display === 'none') ? 'block' : 'none';
+    }
+  </script>
+
+  <script>
+    function togglePagesContent() {
+      const pagesContent = document.getElementById('pages-content');
+
+      // Toggle the visibility of pages-content
+      pagesContent.style.display = (pagesContent.style.display === 'none') ? 'block' : 'none';
+    }
+  </script>
+
+  <script>
+    function openPagesBox() {
+      var pagesBox = document.getElementById('pagesBox');
+      var pagesArrow = document.getElementById('pagesArrow'); // Added this line
+      var paginasLink = findPaginasLink();
+
+      if (pagesBox.style.display === 'block') {
+        pagesBox.style.display = 'none';
+        pagesArrow.style.transform = 'rotate(0deg)'; // Rotate back to the initial position
+      } else {
+        pagesBox.style.display = 'block';
+        pagesArrow.style.transform = 'rotate(180deg)'; // Rotate 180 degrees when opened
+
+        pagesArrow.style.transition = 'transform 0.5s ease';
+        pagesBox.style.transition = 'opacity 1s ease, visibility 1s ease';
+
+
+        // Set the position of the pagesBox below and centered on the "Páginas" link
+        var rect = paginasLink.getBoundingClientRect();
+        var linkWidth = rect.width;
+        var boxWidth = pagesBox.offsetWidth;
+        pagesBox.style.top = rect.bottom + 'px';
+        pagesBox.style.left = rect.left + (linkWidth - boxWidth) / 2 + 'px';
+      }
+    }
+
+    function closePagesBoxOnClickOutside(event) {
+      var pagesBox = document.getElementById('pagesBox');
+      var pagesLink = findPaginasLink();
+
+      if (pagesBox.style.display === 'block' && !pagesBox.contains(event.target) && event.target !== pagesLink) {
+        pagesBox.style.display = 'none';
+      }
+    }
+
+    document.addEventListener('click', closePagesBoxOnClickOutside);
+
+    function findPaginasLink() {
+      var navigationLinks = document.querySelectorAll('.navegacao');
+      for (var i = 0; i < navigationLinks.length; i++) {
+        if (navigationLinks[i].innerText.trim() === 'Páginas') {
+          return navigationLinks[i];
+        }
+      }
+      return null;
+    }
+  </script>
+</body>
+
+</html>

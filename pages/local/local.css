@@ -1,0 +1,764 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url("../../img/bg2.png");
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+#scrolling-svg {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #popup-box {
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Added visibility transition */
+    opacity: 0;
+    visibility: hidden;
+    text-align: left;
+  }
+  
+
+
+  .pagininhas{
+    color: #944E4C;
+    font-family: 'IM Fell English', serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%; /* 19.65px */
+  margin: 5px;
+  }
+  
+  #pages-content a {
+ 
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Add pointer cursor */
+  }
+
+
+
+
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #9f5db1 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #612330;
+    border-radius: 100px;
+    border: 0px solid #ffffff;
+}
+
+ .informacoes{
+    padding-top: 30px;
+    color: #944E4C;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 22px */
+ }
+
+
+.cards{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cerimonia {
+    width: 80%;
+    height: 100%;
+    border-radius: 25px;
+    border: 4px solid #612330;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.recepcao {
+    width: 80%;
+    height: 100%;
+    border-radius: 25px;
+    border: 4px solid #612330;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#ceri {
+    color: #612330;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 80px;
+    border-bottom: 6px solid #944E4C;
+    width: 80%;
+}
+
+#recep{
+    color: #612330;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 80px;
+    border-bottom: 6px solid #944E4C;
+    width: 80%;
+}
+
+.txt {
+    color: #612330;
+    font-family: 'IM Fell English';
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    margin-top: 20px;
+}
+
+
+
+.date-icon {
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+}
+
+.date-icon>div {
+    margin: 30px;
+}
+
+.mrgn-icon-num{
+    margin-bottom: -6px;
+}
+
+
+.textinho {
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: -30px;
+    height: 20%;
+}
+
+#gostariamos{
+    color: #612330;
+    font-family: 'IM Fell English';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%; /* 11.877px */
+}
+
+
+.marrom {
+    color: #8E2E22;
+    font-family: 'IM Fell English';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+}
+
+.escuro {
+    color: #612330;
+    font-family: 'IM Fell English';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+}
+
+#rua {
+    color: #8E2E22;
+    font-family: 'IM Fell English';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%;
+    text-decoration-line: underline;
+}
+
+#temos{
+    color: #8E2E22;
+    font-family: 'IM Fell English';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%; /* 7.918px */
+}
+ 
+
+ 
+
+
+.icon{
+    width: 26px;
+    height: 26px;
+  }
+
+.map {
+    height: 250px;
+    width: 81%;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+.igreja-2{
+width: 100%;
+height: auto;
+}
+
+.igreja {
+    background-image: url("img.local/igrejacerta.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100%;
+    height: 100vh; /* Set the height to cover the entire viewport height */
+}
+
+#scrolling-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+ 
+ 
+ 
+
+  .a {
+    color: #612330;
+    font-family: 'IM Fell English', serif;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 131%; /* 30.392px */
+    text-decoration: none;
+  }
+  
+ 
+  .navegacao {
+    color: #ffff;
+    text-decoration: none;
+    /* Adjust the value as needed */
+    font-family: 'IM Fell English', serif;
+    opacity: 0;
+    visibility: hidden; 
+}
+
+#btn::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    /* Set the line thickness */
+    background-color: black;
+    /* Set the line color */
+    transition: width 0.5s ease;
+    /* Add a smooth transition effect */
+}
+
+/* Hover effect to make the line appear */
+#btn:hover::after {
+    width: 100%;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    visibility: hidden; 
+}
+
+#atual{
+    border-bottom: 3px solid white;
+ }
+
+.b {
+    background-color: #612330;
+    text-decoration: none;
+    font-size: 27px;
+    padding: 14px;
+    position: fixed;
+    width: 100vw;
+    margin-left: -8px;
+    /* Adjust the value as needed */
+    font-family: 'IM Fell English', serif;
+    z-index: 2; /* Set a higher z-index for the navigation */
+    opacity: 0;
+    visibility: hidden; 
+}
+
+.pages-box {
+    display: none;
+    position: absolute;
+    top: 50px; /* Adjust the top position according to your design */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 14px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: left;
+}
+
+.page-link {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+.page-link{
+    color: #944E4C;
+    font-family: 'IM Fell English', serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%; /* 19.65px */
+  margin: 5px;
+  }
+
+
+
+
+  @media (min-width: 1024px) {
+  .b{
+    opacity: 1;
+    visibility: visible; 
+  }
+
+    .bar {
+ 
+        opacity: 1;
+        visibility: visible; 
+    }
+
+    .navegacao {
+        color: #ffff;
+        text-decoration: none;
+        /* Adjust the value as needed */
+        font-family: 'IM Fell English', serif;
+        opacity: 1;
+        visibility:visible; 
+    }
+
+
+    #scrolling-svg {
+ 
+        opacity: 0;
+        visibility:hidden; 
+      }
+
+    .cards {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center; /* Add this line for vertical alignment */
+    }
+
+    .informacoes{  
+        padding-top: 50px;
+        font-size: 30px;
+    }
+
+    .cerimonia{
+         height: 850px;
+         width: 45%;
+         margin-bottom: 40px;
+    }
+
+    .recepcao{
+        height: 850px;
+        width: 45%;
+        margin-bottom: 40px;
+    }
+
+    #ceri{
+        font-size: 35px;
+        margin-top: 60px;
+    }
+
+    #gostariamos{
+        font-size: 25px;
+    }
+
+    .marrom{
+        font-size: 20px;
+    }
+
+    .escuro{
+        font-size: 20px;
+    }
+
+    #rua{
+        font-size: 20px;
+    }
+
+    #recep{
+        font-size: 35px;
+        margin-top: 60px;
+    }
+
+    #temos{
+        font-size: 20px;
+    }
+
+    .map{
+        height: 250px;
+        width: 81%;
+        position: relative;
+        z-index: 1;
+        bottom: -150px; /* Adjust this value based on your design */
+        margin-bottom: 50px;
+    }
+
+    .page-link{
+      font-size: 16px;
+      }
+
+
+
+  }
+
+  @media (min-width: 1280px) {
+ 
+
+    .informacoes{  
+        font-size: 33px;
+    }
+
+    .cerimonia{
+         height: 920px;
+         width: 45%;
+         margin-bottom: 40px;
+    }
+
+    .recepcao{
+        height: 920px;
+        width: 45%;
+        margin-bottom: 40px;
+    }
+
+    #ceri{
+        font-size: 38px;
+        margin-top: 60px;
+    }
+
+    #gostariamos{
+        font-size: 28px;
+    }
+
+    .marrom{
+        font-size: 23px;
+    }
+
+    .escuro{
+        font-size: 23px;
+    }
+
+    #rua{
+        font-size: 23px;
+    }
+
+    #recep{
+        font-size: 38px;
+        margin-top: 60px;
+    }
+
+    #temos{
+        font-size: 23px;
+    }
+
+    .map{
+        height: 280px;
+        width: 81%;
+        position: relative;
+        z-index: 1;
+ 
+        margin-top: 20px;
+    }
+
+    .icon{
+        width: 30px;
+        height: 30px;
+      }
+
+    .txt{
+        font-size: 25px;  
+      }
+    .page-link{
+        font-size: 20px;
+      }
+
+
+
+
+  }
+
+  @media (min-width: 1366px) {
+ 
+
+    .informacoes{  
+        font-size: 36px;
+    }
+
+    .cerimonia{
+         height: 980px;
+         width: 45%;
+         margin-bottom: 40px;
+    }
+
+    .recepcao{
+        height: 980px;
+        width: 45%;
+        margin-bottom: 40px;
+    }
+
+    #ceri{
+        font-size: 42px;
+        margin-top: 60px;
+    }
+
+    #gostariamos{
+        font-size: 30px;
+    }
+
+    .marrom{
+        font-size: 25px;
+    }
+
+    .escuro{
+        font-size: 25px;
+    }
+
+    #rua{
+        font-size: 25px;
+    }
+
+    #recep{
+        font-size: 42px;
+        margin-top: 60px;
+    }
+
+    #temos{
+        font-size: 25px;
+    }
+
+    .map{
+        height: 300px;
+        width: 81%;
+        position: relative;
+        z-index: 1;
+        margin-top: 30px;
+    }
+
+    .icon{
+        width: 35px;
+        height: 35px;
+      }
+
+    .txt{
+        font-size: 28px;  
+      }
+      .page-link{
+        font-size: 22px;
+      }
+
+  }
+
+
+  @media (min-width: 1600px) {
+ 
+
+    .informacoes{  
+        font-size: 40px;
+    }
+
+    .cerimonia{
+         height: 1020px;
+         width: 45%;
+         margin-bottom: 40px;
+    }
+
+    .recepcao{
+        height: 1020px;
+        width: 45%;
+        margin-bottom: 40px;
+    }
+
+    #ceri{
+        font-size: 45px;
+        margin-top: 60px;
+    }
+
+    #gostariamos{
+        font-size: 32px;
+    }
+
+    .marrom{
+        font-size: 27px;
+    }
+
+    .escuro{
+        font-size: 27px;
+    }
+
+    #rua{
+        font-size: 27px;
+    }
+
+    #recep{
+        font-size: 45px;
+        margin-top: 60px;
+    }
+
+    #temos{
+        font-size: 27px;
+    }
+
+    .map{
+        height: 300px;
+        width: 81%;
+        position: relative;
+        z-index: 1;
+        margin-top: 30px;
+    }
+
+    .icon{
+        width: 45px;
+        height: 45px;
+      }
+
+    .txt{
+        font-size: 33px;  
+      }
+      .page-link{
+        font-size: 22px;
+      }
+      
+
+  }
+
+
+  @media (min-width: 1920px) {
+ 
+
+    .informacoes{  
+        font-size: 40px;
+    }
+
+    .cerimonia{
+         height: 1150px;
+         width: 45%;
+         margin-bottom: 40px;
+    }
+
+    .recepcao{
+        height: 1150px;
+        width: 45%;
+        margin-bottom: 40px;
+    }
+
+    #ceri{
+        font-size: 45px;
+        margin-top: 60px;
+    }
+
+    #gostariamos{
+        font-size: 32px;
+    }
+
+    .marrom{
+        font-size: 27px;
+    }
+
+    .escuro{
+        font-size: 27px;
+    }
+
+    #rua{
+        font-size: 27px;
+    }
+
+    #recep{
+        font-size: 45px;
+        margin-top: 60px;
+    }
+
+    #temos{
+        font-size: 27px;
+    }
+
+    .map{
+        height: 450px;
+        width: 81%;
+        position: relative;
+        z-index: 1;
+        margin-top: -20px;
+    }
+
+    .icon{
+        width: 45px;
+        height: 45px;
+      }
+
+    .txt{
+        font-size: 33px;  
+      }
+
+      .page-link{
+        font-size: 25px;
+      }
+
+  }

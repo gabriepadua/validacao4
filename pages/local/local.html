@@ -1,0 +1,320 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local do casamento</title>
+    <link href="local.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Imbue:opsz,wght@10..100,100&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../img/icone.png">
+</head>
+
+<body>
+    <svg id="scrolling-svg" xmlns="http://www.w3.org/2000/svg" width="46" height="43" viewBox="0 0 46 43" fill="none">
+        <path d="M0 0H36C41.5228 0 46 4.47715 46 10V33C46 38.5228 41.5228 43 36 43H0V0Z" fill="white" />
+        <path d="M9 16H36.0185" stroke="#612330" stroke-linecap="round" />
+        <path d="M9 22H36.0185" stroke="#612330" stroke-linecap="round" />
+        <path d="M9 28H36.0185" stroke="#612330" stroke-linecap="round" />
+    </svg>
+    <div id="popup-box">
+        <p><a class="a" href="../../index.html">Inicio</a></p>
+        <p><a class="a" href="../local/local.html">Locais</a></p>
+        <p><a class="a" href="../presentes/presentes.html">Lista de presentes</a></p>
+        <p><a class="a" href="../presenca/presenca.html">Confirme sua presença</a></p>
+        <p><a class="a" href="#" onclick="togglePagesContent()">Páginas</a></p>
+        <div id="pages-content" style="display: none;">
+            <a class="pagininhas" href="../sobre/sobre.html"> Nossa timeline</a><br>
+            <a class="pagininhas" href="../padrinhos/padrinhos.html"> Padrinhos</a><br>
+            <a class="pagininhas" href="mensagem.html"> Deixe uma mensagem</a><br>
+        </div>
+        <svg id="close-menu" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#612330"
+            class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+        </svg>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollingSvg = document.getElementById('scrolling-svg');
+            scrollingSvg.addEventListener('click', toggleContent);
+
+            // Event listener for the close-menu SVG
+            document.getElementById('close-menu').addEventListener('click', function () {
+                togglePopupBox(); // Toggle the visibility of the popup-box when the close-menu SVG is clicked
+            });
+        });
+
+        function toggleContent() {
+            const scrollingSvg = document.getElementById('scrolling-svg');
+            const popupBox = document.getElementById('popup-box');
+
+            const svgRect = scrollingSvg.getBoundingClientRect();
+
+            popupBox.style.top = svgRect.top + 'px';
+            popupBox.style.left = svgRect.left + 'px';
+
+            scrollingSvg.style.opacity = '0';
+            scrollingSvg.style.visibility = 'hidden';
+            popupBox.style.opacity = '1';
+            popupBox.style.visibility = 'visible';
+        }
+
+        function togglePopupBox() {
+            const scrollingSvg = document.getElementById('scrolling-svg');
+            const popupBox = document.getElementById('popup-box');
+
+            scrollingSvg.style.opacity = '1';
+            scrollingSvg.style.visibility = 'visible';
+            popupBox.style.opacity = '0';
+            popupBox.style.visibility = 'hidden';
+        }
+    </script>
+    <header class="d-flex justify-content-center b">
+        <div class="d-flex align-items-center py-2 vw-100">
+            <nav class="nav nav-masthead justify-content-center vw-100 bar">
+                <a class="nav-link fw-bold py-1 px-2 btn navegacao" href="../../index.html">Inicio</a>
+                <a class="nav-link fw-bold py-1 px-2 btn navegacao" id="atual" href="../local/local.html">Locais</a>
+                <a class="nav-link fw-bold py-1 px-2 btn navegacao" href="../presentes/presentes.html">Lista de
+                    presentes</a>
+                <a class="nav-link fw-bold py-1 px-2 btn navegacao" href="../presenca/presenca.html">Confirme sua
+                    presença</a>
+                <a class="nav-link fw-bold py-1 px-2 btn navegacao" href="#" onclick="openPagesBox()">Páginas <svg
+                        id="pagesArrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                    </svg></a>
+        </div>
+        <div id="pagesBox" class="pages-box">
+            <a href="../sobre/sobre.html" class="page-link">Nossa timeline</a>
+            <a href="../padrinhos/padrinhos.html" class="page-link">Padrinhos</a>
+            <a href="../mensagem/mensagem.html" class="page-link">Deixe uma mensagem</a>
+        </div>
+    </header>
+
+
+    <div class="informacoes">
+        <h2>Informações importantes</h2>
+    </div>
+
+    <div class="cards">
+        <div class="cerimonia">
+            <h1 id="ceri">Cerimônia</h1>
+            <div class="date-icon">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#612330"
+                        class="bi bi-calendar-event mrgn-icon-num icon" viewBox="0 0 16 16">
+                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                    </svg>
+                    <h3 class="txt">04.05</h3>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#612330"
+                        class="bi bi-clock mrgn-icon-num icon" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                    </svg>
+                    <h3 class="txt">18h</h3>
+                </div>
+            </div>
+
+
+            <div class="textinho">
+                <p id="gostariamos"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gostaríamos muito de contar com a presença de
+                    todos vocês no
+                    momento mais importante
+                    das
+                    nossas vidas: a
+                    benção da nossa união diante de Deus.</p>
+                <p class="marrom">Contamos com sua presença dia <a class="escuro">04 de maio de 2024</a>, às <a
+                        class="escuro">18h</a> na
+                    <a class="escuro">Igreja Nossa Senhora do
+                        Rosário</a>, localizada
+                    na <a id="rua" target="_blank"
+                        href="https://www.google.com/maps/place/Igreja+Matriz+de+Nossa+Senhora+do+Ros%C3%A1rio+-+Prainha/@-20.3306509,-40.3641488,13z/data=!4m6!3m5!1s0xb816371eb374d5:0xd33195cb6d1c7789!8m2!3d-20.3306509!4d-40.292051!16s%2Fg%2F122bry9g?hl=pt-BR&entry=ttu">rua
+                        Delmar Duarte - Prainha, Vila Velha - ES, 29100-205.</a>
+                    Esperamos ansiosamente compartilhar este momento especial com todos vocês!
+                </p>
+            </div>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d59860.24675944573!2d-40.3641488!3d-20.3306509!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb816371eb374d5%3A0xd33195cb6d1c7789!2sIgreja%20Matriz%20de%20Nossa%20Senhora%20do%20Ros%C3%A1rio%20-%20Prainha!5e0!3m2!1spt-BR!2sbr!4v1704928353782!5m2!1spt-BR!2sbr"
+                class="map" id="abc"></iframe>
+
+
+        </div>
+        <div class="recepcao">
+            <h1 id="recep">Recepção</h1>
+            <div class="date-icon">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#612330"
+                        class="bi bi-calendar-event mrgn-icon-num icon" viewBox="0 0 16 16">
+                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                    </svg>
+                    <h3 class="txt">04.05</h3>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#612330"
+                        class="bi bi-clock mrgn-icon-num icon" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                    </svg>
+                    <h3 class="txt">20h</h3>
+                </div>
+            </div>
+            <div class="textinho">
+                <p id="temos">Temos a alegria de convidá-los para a nossa recepção, que acontecerá no dia 04 de maio de
+                    2024, às 20h30,
+                    no cerimonial Espaço 3 Irmãos, localizado na <a
+                        href="https://www.google.com/maps/place/Espa%C3%A7o+3+Irm%C3%A3os/@-20.349187,-40.392126,17z/data=!3m1!4b1!4m6!3m5!1s0xb8394b6208c9fd:0x6859468d4f0a10f2!8m2!3d-20.349187!4d-40.392126!16s%2Fg%2F11c5s7xx66?hl=pt-BR&entry=ttu"
+                        target="_blank" id="rua">rua
+                        Oito
+                        Irmãos, 03 - Cruzeiro do Sul, Cariacica - ES,
+                        29144-035. </a></p>
+                <p id="gostariamos">Será uma noite repleta de alegria, amor e celebração, e estamos ansiosos para
+                    compartilhar
+                    esse
+                    momento
+                    tão especial com a sua presença.</p>
+            </div>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.816765011977!2d-40.392126!3d-20.349186999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8394b6208c9fd%3A0x6859468d4f0a10f2!2zRXNwYcOnbyAzIElybcOjb3M!5e0!3m2!1spt-BR!2sbr!4v1704928385260!5m2!1spt-BR!2sbr"
+                class="map"></iframe>
+
+        </div>
+
+    </div>
+
+    <div>
+        <img src="imglocal/igrejacerta.png" class="igreja-2">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollingSvg = document.getElementById('scrolling-svg');
+            scrollingSvg.addEventListener('click', openBox);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollingSvg = document.getElementById('scrolling-svg');
+            scrollingSvg.addEventListener('click', toggleContent);
+        });
+
+        function toggleContent() {
+            const scrollingSvg = document.getElementById('scrolling-svg');
+            const popupBox = document.getElementById('popup-box');
+
+            const svgRect = scrollingSvg.getBoundingClientRect();
+
+            popupBox.style.top = svgRect.top + 'px';
+            popupBox.style.left = svgRect.left + 'px';
+
+            scrollingSvg.style.opacity = '0';
+            scrollingSvg.style.visibility = 'hidden';
+            popupBox.style.opacity = '1';
+            popupBox.style.visibility = 'visible';
+        }
+    </script>
+    <script>
+        function togglePagesContent() {
+            const pagesContent = document.getElementById('pages-content');
+
+            // Toggle the visibility of pages-content
+            pagesContent.style.display = (pagesContent.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+
+    <script>
+        function togglePagesContent() {
+            const pagesContent = document.getElementById('pages-content');
+
+            // Toggle the visibility of pages-content
+            pagesContent.style.display = (pagesContent.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+
+
+
+    <script>
+        function openPagesBox() {
+            var pagesBox = document.getElementById('pagesBox');
+            var paginasLink = findPaginasLink();
+
+            if (pagesBox.style.display === 'block') {
+                pagesBox.style.display = 'none';
+            } else {
+                pagesBox.style.display = 'block';
+
+                // Set the position of the pagesBox below and centered on the "Páginas" link
+                var rect = paginasLink.getBoundingClientRect();
+                var linkWidth = rect.width;
+                var boxWidth = pagesBox.offsetWidth;
+                pagesBox.style.top = rect.bottom + 'px';
+                pagesBox.style.left = rect.left + (linkWidth - boxWidth) / 2 + 'px';
+            }
+        }
+
+        function closePagesBoxOnClickOutside(event) {
+            var pagesBox = document.getElementById('pagesBox');
+            var pagesLink = findPaginasLink();
+
+            if (pagesBox.style.display === 'block' && !pagesBox.contains(event.target) && event.target !== pagesLink) {
+                pagesBox.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('click', closePagesBoxOnClickOutside);
+
+        function findPaginasLink() {
+            var navigationLinks = document.querySelectorAll('.navegacao');
+            for (var i = 0; i < navigationLinks.length; i++) {
+                if (navigationLinks[i].innerText.trim() === 'Páginas') {
+                    return navigationLinks[i];
+                }
+            }
+            return null;
+        }
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
